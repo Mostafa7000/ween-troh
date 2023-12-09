@@ -1,0 +1,63 @@
+<div>
+  <div class="submit-form">
+<!--    <div *ngIf="!submitted">-->
+    <div>
+      <div class="form-group">
+        <label for="en">الاسم بالانجليزي</label>
+        <input
+          type="text"
+          class="form-control"
+          id="en"
+          required
+          name="title"
+          [(ngModel)]="category.nameEn"
+        />
+      </div>
+      <div class="form-group">
+        <label for="ar">الاسم بالعربي</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ar"
+          required
+          name="title"
+          [(ngModel)]="category.nameAr"
+        />
+      </div>
+      <div class="form-group">
+        <label>الوصف</label>
+        <input
+          class="form-control"
+          required
+          name="description"
+          [(ngModel)]="category.description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>الصورة</label>
+        <input
+          type="file"
+          class="form-control"
+          required
+          name="description"
+          (change)="selectImage($event)"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>الايكون</label>
+        <input
+          type="file"
+          class="form-control"
+          required
+          name="description"
+          (change)="selectIcon($event)"
+        />
+      </div>
+
+
+    </div>
+      <button class="btn btn-success" (click)="addCategory(category)">اضافة</button>
+    </div>
+  </div>

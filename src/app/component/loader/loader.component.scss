@@ -1,0 +1,100 @@
+* {
+  color: white;
+}
+.up-loader {
+  position: absolute;
+  background-color: black;
+  //opacity: .2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: .8;
+  z-index: 999999;
+}
+.loader {
+  position: absolute;
+  top: 41%;
+  /* left: 30%; */
+  width: 100%;
+  height: 29%;
+  background-color: #595BD4;
+  font-family: "Titillium Web", sans-serif;
+  z-index: 9999999;
+}
+.loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 100px;
+  color: #FFF;
+  margin: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.loading span {
+  position: absolute;
+  height: 10px;
+  width: 84px;
+  top: 50px;
+  overflow: hidden;
+}
+.loading span > i {
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  -webkit-animation: wait 4s infinite;
+  -moz-animation: wait 4s infinite;
+  -o-animation: wait 4s infinite;
+  animation: wait 4s infinite;
+}
+.loading span > i:nth-of-type(1) {
+  left: -28px;
+  background: yellow;
+}
+.loading span > i:nth-of-type(2) {
+  left: -21px;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  background: lightgreen;
+}
+.loading span > i:nth-of-type(3) {
+  left: -14px;
+  -webkit-animation-delay: 0.16s;
+  animation-delay: 0.6s;
+  background: lightgreen;
+}
+.loading span > i:nth-of-type(4) {
+  left: -7px;
+  -webkit-animation-delay: 0.32s;
+  animation-delay: 0.4s;
+  background: lightgreen;
+}
+
+@-webkit-keyframes wait {
+  0%   { left: -7px  }
+  30%  { left: 52px  }
+  60%  { left: 22px  }
+  100% { left: 100px }
+}
+@-moz-keyframes wait {
+  0%   { left: -7px  }
+  30%  { left: 52px  }
+  60%  { left: 22px  }
+  100% { left: 100px }
+}
+@-o-keyframes wait {
+  0%   { left: -7px  }
+  30%  { left: 52px  }
+  60%  { left: 22px  }
+  100% { left: 100px }
+}
+@keyframes wait {
+  0%   { left: -7px  }
+  30%  { left: 52px  }
+  60%  { left: 22px  }
+  100% { left: 100px }
+}

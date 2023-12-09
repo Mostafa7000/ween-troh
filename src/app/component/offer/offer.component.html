@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">العروض</h4>
+        <h5 class="card-subtitle text-muted"></h5>
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap">
+            <thead>
+            <tr>
+              <th class="text-dark font-medium fs-4">#</th>
+              <th class="text-dark font-medium fs-4">العنوان <i class="fa fa-sort"></i></th>
+              <th class="text-dark font-medium fs-4">العملية</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let offer of offers">
+              <td class="fs-4">{{offer.id}}</td>
+              <td class="fs-4">{{offer.title}}</td>
+              <td>
+                <div class="d-inline-block" ngbDropdown>
+                  <button class="btn btn-primary d-flex align-items-center" id="dropdown1" ngbDropdownToggle>
+                    العملية
+
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdown1">
+                    <button routerLink="/offer/view/{{offer.id}}" class="dropdown-item">عرض</button>
+                    <button routerLink="/offer/edit/{{offer.id}}" class="dropdown-item">تعديل</button>
+                    <button routerLink="/offer" (click)="removeOffer(offer.id)" class="dropdown-item">حذف</button>
+                  </div>
+                </div>
+<!--                <a routerLink="/offer/view/{{offer.id}}" class="view" title="View" data-toggle="tooltip"><i class="bi bi-eye"></i></a>-->
+<!--                <a routerLink="/offer/edit/{{offer.id}}" class="edit" title="Edit" data-toggle="tooltip"><i class="bi bi-brush-fill"></i></a>-->
+<!--                <a routerLink="/offer" (click)="removeOffer(offer.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="bi bi-trash"></i></a>-->
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

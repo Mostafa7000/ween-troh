@@ -1,0 +1,64 @@
+<div>
+  <div class="submit-form">
+    <!--    <div *ngIf="!submitted">-->
+    <div>
+      <div class="form-group">
+        <label>العنوان</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          name="title"
+          [(ngModel)]="offer.title"
+          disabled
+        />
+      </div>
+
+      <div class="form-group">
+        <label>الوصف</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          name="title"
+          [(ngModel)]="offer.description"
+          disabled
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="en">السعر</label>
+        <input
+          type="text"
+          class="form-control"
+          id="en"
+          required
+          name="title"
+          [(ngModel)]="offer.price"
+          disabled
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cars">الغلاف</label><br>
+        <select disabled name="cars" id="cars" [(ngModel)]="offer.sliderId">
+          <option  *ngFor="let slider of sliders" value="{{slider.id}}">{{slider.title}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cars">المكان</label>
+        <select disabled name="cars" [(ngModel)]="offer.placeId">
+          <option  *ngFor="let place of places" value="{{place.id}}">{{place.name}}</option>
+        </select>
+      </div>
+
+      <div *ngIf="offer.image" class="form-group">
+        <label>الصورة</label><br>
+        <img class="cus-image" src="{{offer.image}}">
+        <br>
+      </div>
+    </div>
+    <button class="btn btn-success" (click)="edit(offer)">تعديل</button>
+  </div>
+</div>

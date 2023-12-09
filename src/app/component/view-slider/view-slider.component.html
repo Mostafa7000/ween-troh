@@ -1,0 +1,33 @@
+<div>
+  <div class="submit-form">
+    <!--    <div *ngIf="!submitted">-->
+    <div>
+      <div class="form-group">
+        <label for="en">العنوان</label>
+        <input
+          type="text"
+          class="form-control"
+          id="en"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="slider.title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>المكان</label><br>
+        <select disabled name="cars" [(ngModel)]="slider.placeId">
+          <option  *ngFor="let place of places" value="{{place.id}}">{{place.name}}</option>
+        </select>
+      </div>
+
+      <div *ngIf="slider.image" class="form-group">
+        <label>الصورة</label><br>
+        <img class="cus-image" src="{{slider.image}}">
+        <br>
+      </div>
+    </div>
+    <button class="btn btn-success" (click)="edit(slider)">تعديل</button>
+  </div>
+</div>

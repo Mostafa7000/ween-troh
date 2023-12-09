@@ -1,0 +1,159 @@
+<div>
+  <div class="submit-form">
+    <!--    <div *ngIf="!submitted">-->
+    <div>
+      <div class="form-group">
+        <label >الاسم</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.name"
+        />
+      </div>
+      <div class="form-group">
+        <label >العنوان</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.address"
+        />
+      </div>
+      <div class="form-group">
+        <label >رقم الهاتف</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.phone"
+        />
+      </div>
+      <div class="form-group">
+        <label >المدينة</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.city"
+        />
+      </div>
+      <div class="form-group">
+        <label >رقم الواتس</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.whatsapp"
+        />
+      </div>
+      <div class="form-group">
+        <label >التويتر</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.twitter"
+        />
+      </div>
+      <div class="form-group">
+        <label >الفيس بوك</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.facebook"
+        />
+      </div>
+      <div class="form-group">
+        <label >الانستيجرام</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.instagram"
+        />
+      </div>
+      <div class="form-group">
+        <label >الاسناب شات</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.snapchat"
+        />
+      </div>
+
+      <div class="form-group">
+        <label >خط العرض</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.latitude"
+        />
+      </div>
+
+      <div class="form-group">
+        <label >خط الطول</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          required
+          name="title"
+          [(ngModel)]="place.longitude"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cars">الفئة</label><br>
+        <select disabled  name="cars" id="cars" [(ngModel)]="place.categoryId">
+          <option *ngFor="let cst of categories" value="{{cst.id}}">{{cst.nameAr}}</option>
+        </select>
+      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="cars">الغلاف</label><br>-->
+<!--        <select disabled name="cars" [(ngModel)]="place.sliderId">-->
+
+<!--          <option  *ngFor="let slider of sliders" value="{{slider.id}}">{{slider.title}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+      <div *ngIf="place.image" class="form-group">
+        <label>الصورة</label>
+        <br>
+        <img class="cus-image" src="{{place.image}}">
+        <br>
+      </div>
+
+      <div *ngIf="place.image" class="form-group">
+        <label>الايكون</label>
+        <br>
+        <img class="cus-image" src="{{place.logo}}">
+      </div>
+
+
+    </div>
+    <button class="btn btn-success" (click)="edit(place)">تعديل</button>
+  </div>
+</div>

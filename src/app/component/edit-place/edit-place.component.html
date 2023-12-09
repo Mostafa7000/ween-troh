@@ -1,0 +1,175 @@
+<div>
+  <div class="submit-form">
+    <!--    <div *ngIf="!submitted">-->
+    <div>
+      <div class="form-group">
+        <label >الاسم</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.name"
+        />
+      </div>
+      <div class="form-group">
+        <label >العنوان</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.address"
+        />
+      </div>
+      <div class="form-group">
+        <label >رقم الهاتف</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.phone"
+        />
+      </div>
+      <div class="form-group">
+        <label >المدينة</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.city"
+        />
+      </div>
+      <div class="form-group">
+        <label >رقم الواتس</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.whatsapp"
+        />
+      </div>
+      <div class="form-group">
+        <label >التويتر</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.twitter"
+        />
+      </div>
+      <div class="form-group">
+        <label >الفيس بوك</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.facebook"
+        />
+      </div>
+      <div class="form-group">
+        <label >الانستيجرام</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.instagram"
+        />
+      </div>
+      <div class="form-group">
+        <label >الاسناب شات</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.snapchat"
+        />
+      </div>
+
+      <div class="form-group">
+        <label >خط العرض</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.latitude"
+        />
+      </div>
+
+      <div class="form-group">
+        <label >خط الطول</label>
+        <input
+          type="text"
+          class="form-control"
+
+          required
+          name="title"
+          [(ngModel)]="place.longitude"
+        />
+      </div>
+      <div class="form-group">
+        <label>الفئة</label><br>
+        <select name="cars" [(ngModel)]="place.categoryId">
+
+          <option  *ngFor="let cst of categories" value="{{cst.id}}">{{cst.nameAr}}</option>
+        </select>
+      </div>
+
+<!--      <div class="form-group">-->
+<!--        <label>الغلاف</label><br>-->
+<!--        <select name="cars" [(ngModel)]="place.sliderId">-->
+
+<!--          <option  *ngFor="let slider of sliders" value="{{slider.id}}">{{slider.title}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+      <div class="form-group">
+        <label *ngIf="place.image">الصورة</label><br>
+        <img *ngIf="place.image" class="cus-image" src="{{place.image}}">
+        <br>
+        <label>اختر صورة</label>
+        <input
+          type="file"
+          class="form-control"
+          required
+          name="description"
+          (change)="selectImage($event)"
+        />
+      </div>
+
+      <div class="form-group">
+        <label *ngIf="place.logo">الايكون</label><br>
+        <img *ngIf="place.logo" class="cus-image" src="{{place.logo}}">
+        <br>
+        <label>اختر ايكون</label>
+        <input
+          type="file"
+          class="form-control"
+          required
+          name="description"
+          (change)="selectIcon($event)"
+        />
+      </div>
+
+    </div>
+    <button class="btn btn-success" (click)="addPlace(place)">تعديل</button>
+  </div>
+</div>

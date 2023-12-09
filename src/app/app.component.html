@@ -1,0 +1,4 @@
+<app-login *ngIf="!getLogin()"></app-login>
+<app-layout *ngIf="getLogin()"></app-layout>
+<app-loader *ngIf="getLoader()"></app-loader>
+<!--<app-loader></app-loader>-->
